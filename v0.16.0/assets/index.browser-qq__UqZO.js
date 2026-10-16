@@ -1,0 +1,1 @@
+import{i as e,t}from"./index.browser-DF6R-gAu.js";import"./sdk-DmrZs9aI.js";export{t as EventStreamSerde,e as eventStreamSerdeProvider};
