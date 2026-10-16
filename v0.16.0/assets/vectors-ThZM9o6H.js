@@ -1,0 +1,1 @@
+import{t as e}from"./vectors-DjOB7MHh.js";export{e as vectorElement};
