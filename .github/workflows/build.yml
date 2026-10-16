@@ -60,7 +60,8 @@ jobs:
               bunx playwright install --with-deps chromium
               bun run build:packages
               # Skips upstream's lint step; the usage-ping flag (VITE_OPENPENCIL_FEEDBACK) stays unset.
-              bunx vite build --base=./
+              # The app's router needs to know the exact URL it is served from.
+              bunx vite build --base="/$APP/v$ver/"
             ) && ok=1
             if [ "$ok" = 1 ] && [ -f up/dist/index.html ]; then
               mkdir "v$ver"

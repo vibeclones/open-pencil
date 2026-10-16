@@ -1,1 +1,0 @@
-function e(e){let t=[];for(let n=0;n<e.length;n++){let r=e[n];r&&t.push(r)}return t}export{e as t};

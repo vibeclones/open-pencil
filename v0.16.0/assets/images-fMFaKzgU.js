@@ -1,1 +1,0 @@
-import{n as e,t}from"./legacy-CgRIJA-k.js";function n(n){return e(t(n))}function r(e){if(e[0]===255&&e[1]===216&&e[2]===255)return`image/jpeg`;if(e[0]===71&&e[1]===73&&e[2]===70)return`image/gif`;let t=e[0]===82&&e[1]===73&&e[2]===70&&e[3]===70,n=e[8]===87&&e[9]===69&&e[10]===66&&e[11]===80;return t&&n?`image/webp`:`image/png`}export{r as n,n as t};

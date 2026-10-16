@@ -1,1 +1,0 @@
-function e(){let e=()=>void 0,t=()=>void 0;return{promise:new Promise((n,r)=>{e=n,t=r}),resolve:e,reject:t}}export{e as t};

@@ -1,1 +1,0 @@
-import{i as e,t}from"./index.browser-DF6R-gAu.js";import"./sdk-CFH6sPv_.js";export{t as EventStreamSerde,e as eventStreamSerdeProvider};
