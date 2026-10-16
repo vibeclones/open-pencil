@@ -1,0 +1,100 @@
+name: Build upstream releases
+
+on:
+  schedule:
+    - cron: "29 6 * * *"
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: "How many of the newest stable upstream releases to consider"
+        required: false
+        default: "3"
+
+permissions:
+  contents: write
+  pages: write
+
+concurrency: build
+
+env:
+  UP: open-pencil/open-pencil
+  APP: open-pencil
+  GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Find releases we don't have yet
+        run: |
+          : > todo.txt
+          for tag in $(gh release list -R "$UP" --limit "${{ inputs.limit || '3' }}" --exclude-drafts --exclude-pre-releases --json tagName -q '.[].tagName'); do
+            [ -d "v${tag#v}" ] || echo "$tag" >> todo.txt
+          done
+          cat todo.txt
+          if [ -s todo.txt ]; then echo "NEED=true" >> "$GITHUB_ENV"; fi
+
+      - uses: oven-sh/setup-bun@v2
+        if: env.NEED == 'true'
+        with:
+          bun-version: latest
+
+      - name: Build each new release
+        if: env.NEED == 'true'
+        env:
+          GIT_LFS_SKIP_SMUDGE: "1"
+        run: |
+          while read -r tag; do
+            ver="${tag#v}"
+            echo "::group::Build $tag"
+            rm -rf up out
+            git clone --quiet --depth 1 --branch "$tag" "https://github.com/$UP.git" up
+            ok=0
+            (
+              cd up
+              bun install --frozen-lockfile
+              # The demo document's shader fills are drawn at build time in a headless Chromium.
+              bunx playwright install --with-deps chromium
+              bun run build:packages
+              # Skips upstream's lint step; the usage-ping flag (VITE_OPENPENCIL_FEEDBACK) stays unset.
+              bunx vite build --base=./
+            ) && ok=1
+            if [ "$ok" = 1 ] && [ -f up/dist/index.html ]; then
+              mkdir "v$ver"
+              cp -a up/dist/. "v$ver/"
+              cp up/LICENSE "v$ver/" 2>/dev/null || true
+              cp -r up/LICENSES "v$ver/" 2>/dev/null || true
+              printf 'Built from %s at tag %s\nhttps://github.com/%s/tree/%s\nBuilt with upstream'"'"'s vite build (lint step skipped; usage pings off).\n' "$UP" "$tag" "$UP" "$tag" > "v$ver/SOURCE.txt"
+            else
+              echo "::warning::build failed for $tag"
+            fi
+            rm -rf up
+            echo "::endgroup::"
+          done < todo.txt
+
+      - name: Update latest and versions.json
+        run: |
+          versions=$(find . -maxdepth 1 -type d -name 'v[0-9]*' -printf '%f\n' | sed 's/^v//' | sort -rV)
+          [ -n "$versions" ] || { echo "No versions built"; exit 0; }
+          latest=$(echo "$versions" | head -n1)
+          mkdir -p latest
+          printf '<!doctype html><meta charset="utf-8"><title>%s</title><meta http-equiv="refresh" content="0; url=../v%s/"><link rel="canonical" href="../v%s/"><a href="../v%s/">Open %s %s</a>\n' "$APP" "$latest" "$latest" "$latest" "$APP" "$latest" > latest/index.html
+          echo "$versions" | jq -R . | jq -s --arg latest "$latest" '{latest: $latest, versions: .}' > versions.json
+          cat versions.json
+
+      - name: Commit and request a Pages build
+        run: |
+          rm -f todo.txt
+          git add -A
+          if git diff --cached --quiet; then
+            echo "Nothing new"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Add upstream release builds"
+          git push
+          gh api -X POST "repos/${{ github.repository }}/pages/builds"
