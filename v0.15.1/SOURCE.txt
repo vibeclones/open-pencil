@@ -1,3 +1,0 @@
-Built from open-pencil/open-pencil at tag v0.15.1
-https://github.com/open-pencil/open-pencil/tree/v0.15.1
-Built with upstream's vite build (lint step skipped; usage pings off).

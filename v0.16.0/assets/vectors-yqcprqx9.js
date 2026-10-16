@@ -1,1 +1,0 @@
-import{t as e}from"./vectors-DoFP0yOO.js";export{e as vectorElement};

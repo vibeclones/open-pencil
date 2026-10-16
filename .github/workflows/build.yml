@@ -53,6 +53,9 @@ jobs:
             rm -rf up out
             git clone --quiet --depth 1 --branch "$tag" "https://github.com/$UP.git" up
             ok=0
+            # Upstream's router has no base path, so it only works at a site's root. Point it at the build's base URL.
+            sed -i 's#createWebHistory()#createWebHistory(import.meta.env.BASE_URL)#' up/src/router.ts
+            grep -q 'createWebHistory(import.meta.env.BASE_URL)' up/src/router.ts || echo "::warning::router patch did not apply to $tag"
             (
               cd up
               bun install --frozen-lockfile
@@ -68,7 +71,7 @@ jobs:
               cp -a up/dist/. "v$ver/"
               cp up/LICENSE "v$ver/" 2>/dev/null || true
               cp -r up/LICENSES "v$ver/" 2>/dev/null || true
-              printf 'Built from %s at tag %s\nhttps://github.com/%s/tree/%s\nBuilt with upstream'"'"'s vite build (lint step skipped; usage pings off).\n' "$UP" "$tag" "$UP" "$tag" > "v$ver/SOURCE.txt"
+              printf 'Built from %s at tag %s\nhttps://github.com/%s/tree/%s\nBuilt with upstream'"'"'s vite build (lint step skipped; usage pings off). One source change: src/router.ts createWebHistory() now takes import.meta.env.BASE_URL so the app works from a subfolder.\n' "$UP" "$tag" "$UP" "$tag" > "v$ver/SOURCE.txt"
             else
               echo "::warning::build failed for $tag"
             fi
