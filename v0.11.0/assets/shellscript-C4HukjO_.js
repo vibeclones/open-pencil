@@ -1,0 +1,1 @@
+import{t as e}from"./shellscript-C1Vwddgz.js";export{e as default};

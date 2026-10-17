@@ -1,0 +1,1 @@
+import{n as e}from"./render-DmGz9ns1.js";export{e as renderJSX};

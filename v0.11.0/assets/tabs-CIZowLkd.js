@@ -1,0 +1,1 @@
+import{i as e}from"./tabs-L45hpiCQ.js";export{e as createTab};

@@ -1,0 +1,1 @@
+import{t as e}from"./gdscript-DTAm0SJJ.js";export{e as default};

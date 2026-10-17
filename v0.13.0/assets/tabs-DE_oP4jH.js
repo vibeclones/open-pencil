@@ -1,0 +1,1 @@
+import{i as e}from"./tabs-CgUvi923.js";export{e as createTab};

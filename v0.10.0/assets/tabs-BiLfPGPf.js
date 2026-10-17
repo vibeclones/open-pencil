@@ -1,0 +1,1 @@
+import"./src-BX3hAlm0.js";import"./color-D_nLXvGa.js";import"./iconify-CV-To6A_.js";import"./layout-CBTC3sRZ.js";import{i as e}from"./tabs-iXZcm4kh.js";import"./constants-BbKJqmIv.js";export{e as createTab};

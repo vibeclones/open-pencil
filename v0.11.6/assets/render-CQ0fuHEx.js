@@ -1,0 +1,1 @@
+import{n as e}from"./render-BOt_iiTX.js";export{e as renderJSX};

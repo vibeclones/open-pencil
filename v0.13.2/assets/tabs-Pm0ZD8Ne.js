@@ -1,0 +1,1 @@
+import{i as e}from"./tabs-CDUmRH_j.js";export{e as createTab};

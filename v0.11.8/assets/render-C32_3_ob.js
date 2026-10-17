@@ -1,0 +1,1 @@
+import{n as e}from"./render-CDrPUZlP.js";export{e as renderJSX};

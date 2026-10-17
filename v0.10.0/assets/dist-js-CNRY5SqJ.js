@@ -1,0 +1,1 @@
+import{i as e}from"./core-DIfVxH1L.js";async function t(t={}){return typeof t==`object`&&Object.freeze(t),await e(`plugin:dialog|open`,{options:t})}async function n(t={}){return typeof t==`object`&&Object.freeze(t),await e(`plugin:dialog|save`,{options:t})}export{t as open,n as save};

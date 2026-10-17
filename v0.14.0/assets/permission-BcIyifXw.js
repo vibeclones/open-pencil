@@ -1,0 +1,1 @@
+import{i as e}from"./permission-B6Y1Eh-k.js";export{e as requestPermissionFromUser};

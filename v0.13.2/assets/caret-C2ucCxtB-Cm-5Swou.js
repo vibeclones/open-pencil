@@ -1,0 +1,1 @@
+import{V as e,_ as t,kt as n,v as r,w as i,wt as a}from"./vue.runtime.esm-bundler-CT5s_FEB.js";import{j as o,p as s}from"./dist-Cx9BwtPP.js";var c={key:0,"data-stream-markdown":`caret`},l=i({__name:`caret`,setup(i){let{enableCaret:s,caret:l}=o();return(i,o)=>a(s)?(e(),r(`span`,c,n(a(l)),1)):t(`v-if`,!0)}}),u=s({default:()=>d}),d=l;export{u as n,d as t};

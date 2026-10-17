@@ -1,0 +1,1 @@
+import{i as e}from"./acp-permission-DjDx7Ktw.js";export{e as requestPermissionFromUser};

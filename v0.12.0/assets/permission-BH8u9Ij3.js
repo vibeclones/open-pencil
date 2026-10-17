@@ -1,0 +1,1 @@
+import{i as e}from"./permission-GORmAuWL.js";export{e as requestPermissionFromUser};

@@ -1,0 +1,1 @@
+import{i as e}from"./core-Bp-8rvrE.js";export{e as invoke};

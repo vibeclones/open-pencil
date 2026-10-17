@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/open-pencil/v0.14.0/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/open-pencil/v0.14.0/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="128x128" href="/open-pencil/v0.14.0/favicon-128.png" />
+    <link rel="apple-touch-icon" href="/open-pencil/v0.14.0/apple-touch-icon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <meta name="theme-color" content="#1e1e1e" />
+    <title>OpenPencil</title>
+    <style>
+      :root {
+        --loader-bg: #1e1e1e;
+        --loader-fg: 255, 255, 255;
+      }
+      @media (prefers-color-scheme: light) {
+        :root {
+          --loader-bg: #f3f4f6;
+          --loader-fg: 32, 33, 36;
+        }
+      }
+      html[data-theme='dark'] {
+        --loader-bg: #1e1e1e;
+        --loader-fg: 255, 255, 255;
+      }
+      html[data-theme='light'] {
+        --loader-bg: #f3f4f6;
+        --loader-fg: 32, 33, 36;
+      }
+      body { margin: 0; background: var(--loader-bg); }
+      #boot-splash {
+        position: fixed;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+        color: rgb(var(--loader-fg));
+        background: var(--loader-bg);
+      }
+      #boot-splash svg { width: 32px; height: 32px; opacity: 0.45; }
+      #boot-splash .bar {
+        position: absolute;
+        bottom: 50%;
+        left: 50%;
+        transform: translate(-50%, 40px);
+        width: 100px;
+        height: 2px;
+        background: rgba(var(--loader-fg), 0.08);
+        border-radius: 1px;
+        overflow: hidden;
+      }
+      #boot-splash .bar::after {
+        content: '';
+        display: block;
+        height: 100%;
+        width: 40%;
+        background: rgba(var(--loader-fg), 0.25);
+        border-radius: 1px;
+        animation: slide 1s ease-in-out infinite;
+      }
+      @keyframes slide {
+        0% { transform: translateX(-100%); }
+        100% { transform: translateX(350%); }
+      }
+    </style>
+    <script type="module" crossorigin src="/open-pencil/v0.14.0/assets/index-B01YRM-4.js"></script>
+    <link rel="modulepreload" crossorigin href="/open-pencil/v0.14.0/assets/preload-helper-DTQI3te8.js">
+    <link rel="modulepreload" crossorigin href="/open-pencil/v0.14.0/assets/chunk-zsgVPwQN.js">
+    <link rel="modulepreload" crossorigin href="/open-pencil/v0.14.0/assets/constants-iigx914t.js">
+    <link rel="modulepreload" crossorigin href="/open-pencil/v0.14.0/assets/vue.runtime.esm-bundler-Sl3dDxN4.js">
+    <link rel="modulepreload" crossorigin href="/open-pencil/v0.14.0/assets/dist-BnIcXBnv.js">
+    <link rel="modulepreload" crossorigin href="/open-pencil/v0.14.0/assets/ui-Cu0IIj2w.js">
+    <link rel="modulepreload" crossorigin href="/open-pencil/v0.14.0/assets/command-BHKUpSyg.js">
+    <link rel="modulepreload" crossorigin href="/open-pencil/v0.14.0/assets/transport-DgjpFzXN.js">
+    <link rel="modulepreload" crossorigin href="/open-pencil/v0.14.0/assets/slicedToArray-B90jICqS.js">
+    <link rel="modulepreload" crossorigin href="/open-pencil/v0.14.0/assets/typeof-DxaMiMZt.js">
+    <link rel="modulepreload" crossorigin href="/open-pencil/v0.14.0/assets/defineProperty-BFAneCVh.js">
+    <link rel="modulepreload" crossorigin href="/open-pencil/v0.14.0/assets/src-D7trKv0O.js">
+    <link rel="modulepreload" crossorigin href="/open-pencil/v0.14.0/assets/opentype-2tc6DBg6.js">
+    <link rel="modulepreload" crossorigin href="/open-pencil/v0.14.0/assets/management-Dr24ewWl.js">
+    <link rel="modulepreload" crossorigin href="/open-pencil/v0.14.0/assets/subgraph-Dw-ElaH0.js">
+    <link rel="modulepreload" crossorigin href="/open-pencil/v0.14.0/assets/raster-CSAu7Fmj.js">
+    <link rel="modulepreload" crossorigin href="/open-pencil/v0.14.0/assets/zwitch-D9l7k5F7.js">
+    <link rel="modulepreload" crossorigin href="/open-pencil/v0.14.0/assets/dist-B7OBDorN.js">
+    <link rel="modulepreload" crossorigin href="/open-pencil/v0.14.0/assets/svgpath-DV_H-ktM.js">
+    <link rel="modulepreload" crossorigin href="/open-pencil/v0.14.0/assets/svg-DfJfQ4Yu.js">
+    <link rel="modulepreload" crossorigin href="/open-pencil/v0.14.0/assets/layout-8rWF_Ljx.js">
+    <link rel="modulepreload" crossorigin href="/open-pencil/v0.14.0/assets/color-CN68iDF6.js">
+    <link rel="modulepreload" crossorigin href="/open-pencil/v0.14.0/assets/random-BUyZYhR6.js">
+    <link rel="modulepreload" crossorigin href="/open-pencil/v0.14.0/assets/render-B4vwwtdx.js">
+    <link rel="modulepreload" crossorigin href="/open-pencil/v0.14.0/assets/core-DamlX1SP.js">
+    <link rel="modulepreload" crossorigin href="/open-pencil/v0.14.0/assets/browser-Bk1YPhrr.js">
+    <link rel="modulepreload" crossorigin href="/open-pencil/v0.14.0/assets/esm-DBqzbRXU.js">
+    <link rel="modulepreload" crossorigin href="/open-pencil/v0.14.0/assets/svg-FJ6DAjr9.js">
+    <link rel="modulepreload" crossorigin href="/open-pencil/v0.14.0/assets/constants-DZIzQEG_.js">
+    <link rel="modulepreload" crossorigin href="/open-pencil/v0.14.0/assets/cors-Dw0EzQC_.js">
+    <link rel="modulepreload" crossorigin href="/open-pencil/v0.14.0/assets/http-g2_4Yjsq.js">
+    <link rel="modulepreload" crossorigin href="/open-pencil/v0.14.0/assets/empty-node-module-CKXDFh-P.js">
+    <link rel="modulepreload" crossorigin href="/open-pencil/v0.14.0/assets/tabs-R0DaxrBp.js">
+    <link rel="modulepreload" crossorigin href="/open-pencil/v0.14.0/assets/lib-B8Uu827s.js">
+    <link rel="modulepreload" crossorigin href="/open-pencil/v0.14.0/assets/permission-B6Y1Eh-k.js">
+    <link rel="modulepreload" crossorigin href="/open-pencil/v0.14.0/assets/spawn-ncJrRZ2J.js">
+    <link rel="modulepreload" crossorigin href="/open-pencil/v0.14.0/assets/router-DTybAAZa.js">
+    <link rel="stylesheet" crossorigin href="/open-pencil/v0.14.0/assets/router-yBlJzReu.css">
+    <link rel="stylesheet" crossorigin href="/open-pencil/v0.14.0/assets/index-mQ-BaMHG.css">
+  <link rel="manifest" href="/open-pencil/v0.14.0/manifest.webmanifest"></head>
+
+  <body>
+    <div id="app">
+      <div id="boot-splash">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="m15.232 5.232 3.536 3.536m-2.036-5.036a2.5 2.5 0 0 1 3.536 3.536L6.5 21.036H3v-3.572L16.732 3.732Z"/>
+        </svg>
+        <div class="bar"></div>
+      </div>
+    </div>
+  </body>
+</html>

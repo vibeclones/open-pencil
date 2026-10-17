@@ -1,0 +1,1 @@
+import{n as e}from"./render-B4vwwtdx.js";export{e as renderJSX};

@@ -1,0 +1,1 @@
+import{n as e}from"./render-Tfmo9mvF.js";export{e as renderJSX};

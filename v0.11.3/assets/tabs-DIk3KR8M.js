@@ -1,0 +1,1 @@
+import{i as e}from"./tabs-BSk2qzoS.js";export{e as createTab};

@@ -1,0 +1,1 @@
+import{i as e}from"./tabs-CJ_h_cQs.js";export{e as createTab};

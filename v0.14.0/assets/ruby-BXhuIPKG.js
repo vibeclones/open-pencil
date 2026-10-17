@@ -1,0 +1,1 @@
+import{t as e}from"./ruby-gh_6-Yma.js";export{e as default};

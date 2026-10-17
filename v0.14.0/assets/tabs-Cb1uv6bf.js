@@ -1,0 +1,1 @@
+import{i as e}from"./tabs-R0DaxrBp.js";export{e as createTab};

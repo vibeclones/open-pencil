@@ -1,0 +1,1 @@
+import{n as e}from"./render-CY8eoMB5.js";export{e as renderJSX};

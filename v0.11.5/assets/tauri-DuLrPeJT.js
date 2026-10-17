@@ -1,0 +1,1 @@
+function e(e){return typeof e==`string`?e:new TextDecoder().decode(e instanceof Uint8Array?e:new Uint8Array(e))}export{e as t};

@@ -1,0 +1,1 @@
+import{i as e}from"./tabs-J8Fu-Jyz.js";export{e as createTab};
