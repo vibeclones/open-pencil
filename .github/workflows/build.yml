@@ -24,7 +24,7 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 180
+    timeout-minutes: 340
     steps:
       - uses: actions/checkout@v4
 
@@ -88,6 +88,9 @@ jobs:
           printf '<!doctype html><meta charset="utf-8"><title>%s</title><meta http-equiv="refresh" content="0; url=../v%s/"><link rel="canonical" href="../v%s/"><a href="../v%s/">Open %s %s</a>\n' "$APP" "$latest" "$latest" "$latest" "$APP" "$latest" > latest/index.html
           echo "$versions" | jq -R . | jq -s --arg latest "$latest" '{latest: $latest, versions: .}' > versions.json
           cat versions.json
+
+      - name: Keep the site under its size cap
+        run: bash scripts/prune.sh
 
       - name: Commit and request a Pages build
         run: |
