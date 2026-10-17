@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
     inputs:
       limit:
-        description: "How many of the newest stable upstream releases to consider"
+        description: "How many of the newest releases to consider, or 'taste' to thin the whole history toward the past"
         required: false
         default: "3"
 
@@ -31,7 +31,13 @@ jobs:
       - name: Find releases we don't have yet
         run: |
           : > todo.txt
-          for tag in $(gh release list -R "$UP" --limit "${{ inputs.limit || '3' }}" --exclude-drafts --exclude-pre-releases --json tagName -q '.[].tagName'); do
+          if [ "${{ inputs.limit || '3' }}" = taste ]; then
+            # Thin the history toward the past (see scripts/pick.py) instead of a hard cutoff.
+            tags=$(gh release list -R "$UP" --limit 400 --exclude-drafts --exclude-pre-releases --json tagName,publishedAt | python3 scripts/pick.py)
+          else
+            tags=$(gh release list -R "$UP" --limit "${{ inputs.limit || '3' }}" --exclude-drafts --exclude-pre-releases --json tagName -q '.[].tagName')
+          fi
+          for tag in $tags; do
             [ -d "v${tag#v}" ] || echo "$tag" >> todo.txt
           done
           cat todo.txt
