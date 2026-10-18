@@ -1,0 +1,1 @@
+import{ah as o,o as r,c as n,a}from"./index-BWYxNHom.js";const t={viewBox:"0 0 24 24",width:"1.2em",height:"1.2em"};function l(i,e){return r(),n("svg",t,[...e[0]||=[a("path",{fill:"none",stroke:"currentColor","stroke-linecap":"round","stroke-linejoin":"round","stroke-width":"2",d:"m6 9l6 6l6-6"},null,-1)]])}var c=o({name:"lucide-chevron-down",render:l});export{c as default};

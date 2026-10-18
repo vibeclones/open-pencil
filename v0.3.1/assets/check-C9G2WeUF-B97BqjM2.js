@@ -1,0 +1,1 @@
+import{ah as o,o as r,c as a,a as n}from"./index-BwVQdkgt.js";const t={viewBox:"0 0 24 24",width:"1.2em",height:"1.2em"};function l(c,e){return r(),a("svg",t,[...e[0]||=[n("path",{fill:"none",stroke:"currentColor","stroke-linecap":"round","stroke-linejoin":"round","stroke-width":"2",d:"M20 6L9 17l-5-5"},null,-1)]])}var s=o({name:"lucide-check",render:l});export{s as default};

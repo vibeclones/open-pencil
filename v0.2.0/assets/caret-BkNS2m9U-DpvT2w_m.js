@@ -1,0 +1,1 @@
+import{N as r,d as n,B as s,j as e,o,c,y as l,g as m}from"./index-C9JpUzVe.js";const d={key:0,"data-stream-markdown":"caret"};var p=n({__name:"caret",setup(u){let{enableCaret:a,caret:t}=s();return(f,k)=>e(a)?(o(),c("span",d,l(e(t)),1)):m("v-if",!0)}}),y=r({default:()=>i}),i=p;export{y as n,i as t};
