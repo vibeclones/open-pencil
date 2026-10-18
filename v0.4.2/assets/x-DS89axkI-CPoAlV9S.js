@@ -1,0 +1,1 @@
+import{ah as o,o as r,c as a,a as n}from"./index-CFQxOjBc.js";const t={viewBox:"0 0 24 24",width:"1.2em",height:"1.2em"};function l(i,e){return r(),a("svg",t,[...e[0]||=[n("path",{fill:"none",stroke:"currentColor","stroke-linecap":"round","stroke-linejoin":"round","stroke-width":"2",d:"M18 6L6 18M6 6l12 12"},null,-1)]])}var c=o({name:"lucide-x",render:l});export{c as default};
