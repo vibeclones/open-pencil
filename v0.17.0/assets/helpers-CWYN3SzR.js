@@ -1,0 +1,1 @@
+function e(e){let t=Promise.resolve();return(...n)=>{let r=()=>e(...n),i=t.then(r,r);return t=i,i}}function t(e,t){let n=new Map;for(let t of e)n.set(t.name,t);let r=new Set;for(let e of t)r.has(e.name)||(r.add(e.name),n.delete(e.name),n.set(e.name,e));return[...n.values()]}function n(e){return e}export{t as n,n as r,e as t};

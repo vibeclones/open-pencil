@@ -1,0 +1,1 @@
+import{a as e,c as t,i as n,l as r,n as i,o as a,r as o,s,t as c}from"./dist-js-BhYPVVTV.js";export{c as arch,i as eol,o as exeExtension,n as family,e as hostname,a as locale,s as platform,t as type,r as version};

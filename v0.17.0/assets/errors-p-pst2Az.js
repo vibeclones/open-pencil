@@ -1,0 +1,1 @@
+function e(e){return e instanceof Error?e.message:String(e)}function t(e){return e instanceof Error?e:Error(String(e))}function n(e){return e instanceof Error&&e.name===`AbortError`}export{n,t as r,e as t};

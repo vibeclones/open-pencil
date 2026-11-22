@@ -1,0 +1,1 @@
+import{i as e,t}from"./index.browser-Cc8ARLWt.js";import"./sdk-BvX8-Mie.js";export{t as EventStreamSerde,e as eventStreamSerdeProvider};

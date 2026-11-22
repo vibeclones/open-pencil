@@ -1,0 +1,1 @@
+(function(){function e(e,t){return e===`auto`?t?`dark`:`light`:e===`light`?`light`:`dark`}function t(){try{return localStorage.getItem(`open-pencil:theme`)}catch{return null}}document.documentElement.dataset.theme=e(t(),matchMedia(`(prefers-color-scheme: dark)`).matches)})();

@@ -1,0 +1,1 @@
+function e(e){let t=e.strokes.find(e=>e.visible);return!e.strokesIncludedInLayout||t?.align!==`INSIDE`?{top:0,right:0,bottom:0,left:0}:e.independentStrokeWeights?{top:e.borderTopWeight,right:e.borderRightWeight,bottom:e.borderBottomWeight,left:e.borderLeftWeight}:{top:t.weight,right:t.weight,bottom:t.weight,left:t.weight}}export{e as t};

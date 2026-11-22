@@ -1,0 +1,1 @@
+import{t as e}from"./mdast-util-from-markdown-YoIl1caj.js";export{e as fromMarkdown};

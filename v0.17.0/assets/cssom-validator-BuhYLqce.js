@@ -1,0 +1,1 @@
+import"./CSSOM-B8Kgo0oU.js";import{t as e}from"./validate-Cj5jlz5n.js";var t=e(e=>(void 0)(e));export{t as tokenValidator};

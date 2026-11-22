@@ -1,0 +1,1 @@
+function e(e,t){let n={};for(let r=0;r<e.length;r++){let i=e[r],a=t(i,r,e);n[a]=(n[a]??0)+1}return n}export{e as t};

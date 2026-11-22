@@ -1,0 +1,1 @@
+function e(e){let t={},n=Object.keys(e);for(let r=0;r<n.length;r++){let i=n[r],a=e[i];t[a]=i}return t}export{e as t};

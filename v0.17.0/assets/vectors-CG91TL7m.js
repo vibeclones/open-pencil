@@ -1,0 +1,1 @@
+import{t as e}from"./vectors-ClAfbASk.js";export{e as vectorElement};

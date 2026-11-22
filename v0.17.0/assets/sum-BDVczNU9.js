@@ -1,0 +1,1 @@
+function e(e){let t=0;for(let n=0;n<e.length;n++)t+=e[n];return t}export{e as t};

@@ -1,0 +1,1 @@
+function e(e){return[...new Set(e)]}function t(e,t){for(let n of t)e.push(n)}function n(e,n,r){let i=e.splice(n);t(e,r),t(e,i)}function r(e){let t=-1/0;for(let n of e){if(Number.isNaN(n))return NaN;n>t&&(t=n)}return t}function i(e){let t=1/0;for(let n of e){if(Number.isNaN(n))return NaN;n<t&&(t=n)}return t}export{e as a,i,n,r,t};
